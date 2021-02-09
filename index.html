@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spare My Food</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <header>
+        <h1>Spare My Food</h1>
+    </header>
+    
+    <main>
+        <section id="intro">
+            <h2>Got food to give?</h2>
+            <p>Search below for local food banks in your area.</p>
+            <p>Enter a UK postcode and what you have to offer.</p>
+        </section>
+
+        <section id="search">
+            <form>
+                <label for="postcode">Postcode: </label>
+                <input type="text" id="postcode" name="postcode"><br>
+                <label for="food">Food to offer: </label>
+                <input type="text" name="food" id="food">
+                <input id="submit" type="submit" value="Submit">
+            </form>
+            <div id="output"></div>
+            <h2 id="bank-name" class="bank-info name"></h1>
+            <h3 id="bank-distance" class="bank-info distance"></h3>
+            <address id="bank-address" class="bank-info address"></address>
+            <ul id="items-needed" class="bank-info items-needed">
+
+            </ul>
+        </section>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
