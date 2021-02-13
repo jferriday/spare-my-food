@@ -21,6 +21,8 @@
         </section>
 
         <section id="search">
+            <button id='previous' class="cycle-button">Previous</button>
+            <button id='next' class="cycle-button">Next</button>
             <form>
                 <label for="postcode">Postcode: </label>
                 <input type="text" id="postcode" name="postcode"><br>
@@ -28,13 +30,13 @@
                 <input type="text" name="food" id="food">
                 <input id="submit" type="submit" value="Submit">
             </form>
-            <div id="output"></div>
-            <h2 id="bank-name" class="bank-info name"></h1>
-            <h3 id="bank-distance" class="bank-info distance"></h3>
-            <address id="bank-address" class="bank-info address"></address>
-            <ul id="items-needed" class="bank-info items-needed">
-
+            <div id="output">
+                <h2 id="bank-name" class="bank-info name"></h1>
+                <h3 id="bank-distance" class="bank-info distance"></h3>
+                <address id="bank-address" class="bank-info address"></address>
+                <ul id="items-needed" class="bank-info items-needed">
             </ul>
+        </div>
         </section>
     </main>
     <script src="main.js"></script>
