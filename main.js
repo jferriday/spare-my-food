@@ -12,19 +12,20 @@ async function getBanks(){
     }
 }
 
-
+// Global variable to store bank list
+let bankList;
 
 // get the list of foodbanks and call updateHTML
 async function getBankList() {
     try{
-        const bankList = await getBanks();
-        updateHTML(bankList);
+        bankList = await getBanks();
+        updateHTML();
     }catch (e){
         console.log('Error: ', e);
     }
 }
 
-function updateHTML(bankList, bankIndex){
+function updateHTML(bankIndex=0){
     // get the properties of the nearest food bank
     console.log(bankList);
     console.log('Bank index: ', bankIndex);
@@ -33,7 +34,10 @@ function updateHTML(bankList, bankIndex){
     const distance = bank.distance_mi;
     const date = new Date(bank.needs.found);
     const dateText = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    const email = bank.email;
+    const telNum = bank.phone;
     const needs = bank.needs.needs;
+    
 
     console.log(name);
     console.log(distance);
@@ -42,11 +46,20 @@ function updateHTML(bankList, bankIndex){
     
     const nameField = document.getElementById('bank-name');
     const distField = document.getElementById('bank-distance');
-    const addField = document.getElementById('bank-address')
+    const telField = document.getElementById('tel');
+    const emailAdd = document.getElementById('email')
+    const addField = document.getElementById('bank-address');
     const needsList = document.getElementById("items-needed");
+    
     
     nameField.innerHTML = name;
     distField.innerText = distance + " miles away";
+    emailAdd.innerHTML = `<a href="mailto:${email}">${email}</a>`
+    telField.innerText = telNum;
+   
+
+    //clear needs list before update
+    needsList.innerHTML = "";
 
     // populate needs list with needs added as list entries
     let needsArr = needs.split("\n")
@@ -71,6 +84,7 @@ const decrementBank = () => {
 
 
 
+
 // Buttons
 const submit = document.getElementById('submit');
 const previous = document.getElementById('previous');
@@ -82,6 +96,7 @@ searchForm.addEventListener('submit', (e) =>{
     e.preventDefault(); // prevent submission from refreshing the page:
     bankIndex = 0 // reset bank index to zero for new search
     getBankList();
+    document.getElementById('output').classList.add('output-display');
 })
 
 

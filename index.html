@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spare My Food</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+    
 </head>
 
 <body>
@@ -14,31 +15,47 @@
     </header>
     
     <main>
-        <section id="intro">
-            <h2>Got food to give?</h2>
-            <p>Search below for local food banks in your area.</p>
-            <p>Enter a UK postcode and what you have to offer.</p>
-        </section>
+        <div id="input">
+            <section id="intro">
+                <h2>Got food to give?</h2>
+            </br>
+                <p>Search below for local food banks in your area.</p>
+                <p>Enter a UK postcode:</p>
+            </section>
 
-        <section id="search">
-            <button id='previous' class="cycle-button">Previous</button>
-            <button id='next' class="cycle-button">Next</button>
-            <form>
-                <label for="postcode">Postcode: </label>
-                <input type="text" id="postcode" name="postcode"><br>
-                <label for="food">Food to offer: </label>
-                <input type="text" name="food" id="food">
-                <input id="submit" type="submit" value="Submit">
-            </form>
-            <div id="output">
+            <section id="search">
+                <form>
+                    <label for="postcode">Postcode: </label>
+                    <input type="text" id="postcode" name="postcode">
+                    <input class="cycle-button" id="submit" type="submit" value="Submit">
+                </form>
+        </div>
+        <div id="output" class="output-hidden">
+                <button id='previous' class="cycle-button">Previous</button>
+                <button id='next' class="cycle-button">Next</button>
                 <h2 id="bank-name" class="bank-info name"></h1>
                 <h3 id="bank-distance" class="bank-info distance"></h3>
+                <h3>Email: <span id="email"></span></h3>
+                <h3>Tel: <span id="tel"></span></h3>
                 <address id="bank-address" class="bank-info address"></address>
+                <h3>Items needed:</h3>
                 <ul id="items-needed" class="bank-info items-needed">
-            </ul>
+                </ul>
+
+                
         </div>
         </section>
+       
+
+            </div>
+        </section>
     </main>
+    <!--Leaflet JavaScript link -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <!--Main.js-->
     <script src="main.js"></script>
+    
 </body>
 </html>

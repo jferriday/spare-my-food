@@ -1,8 +1,118 @@
-html, body {
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Open+Sans&display=swap');
+
+
+* {
     padding: 0;
     margin: 0%;
+    box-sizing: border-box;
+    
 }
+html { 
+    font-size: 22px;
+padding: 0;
+margin: 0;}
 
 body {
-    background-color: aquamarine;
+    background-color: white;
 }
+
+header {
+    width: 100%;
+    grid-area: header;
+    background-color: #3669FF;
+    padding: 5px;
+    text-align: center;
+
+}
+
+h1 {
+    
+    font-family: 'Abril Fatface';
+    font-size: 3rem;
+    color: white;
+    margin: auto;
+}
+h2, h3, h4, p, li, label, input{
+    font-family: 'Open Sans';
+}
+
+
+main {
+    display: flex;
+    flex-direction: row;
+    padding: 5% 10%;
+    align-content: space-between;  
+
+    
+}
+
+
+#input {
+    flex-basis: 400px;
+    flex-shrink: 0;
+    flex-grow: 1;
+    max-width: 600px;
+    min-width: 300px;
+    padding: 20px;
+    text-align: left;
+}
+#intro {
+    margin: 0px 60px 20px 0px;
+    padding: 0;
+    text-align: left;
+}
+
+
+#search {
+    margin: 0 60px 20px 0;
+    text-align: left;
+   
+}
+
+form {
+    text-align: left;
+    margin-left: 0;
+}
+
+.cycle-button {
+    background-color: #3669FF;
+    color: white;
+    display: inline-block;
+    padding: 0.5em 1.5em;
+    margin: 0.5em;
+    border: none;
+    box-shadow: rgb(129, 129, 129) , 1px, 1px;
+    border-radius: 2em;
+    transition: 0.2s;
+}
+.cycle-button:hover {
+    background-color:  #1953ff;
+}
+.cycle-button:focus {
+    border: none;
+}
+
+
+#submit {
+    margin-top: 20px;
+    margin-left: 0;
+}
+
+.output-hidden {
+    display: none;
+}
+.output-display {
+    display: inline-block;
+    text-align: left;
+    max-width: 600px;
+    word-wrap: break-word;
+}
+
+@media screen and (max-width: 1000px) {
+
+    main {
+        flex-direction: column;
+    }
+
+}
+
